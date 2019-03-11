@@ -2,7 +2,7 @@ const baseUrl = 'https://maps.googleapis.com/maps/api/geocode/json';
 const axios = require('axios');
 const API_KEY = process.env.GOOGLE_MAPS_API_KEY;
 
-async function getLatLng({ postalCode = null, clientUrl = 'http://localhost' }) {
+const getLatLng = async ({ postalCode = null, clientUrl = 'http://localhost' }) => {
   const endPoint = `${baseUrl}?address=${postalCode}&type=json&key=${API_KEY}`;
   try {
     const response = await axios.get(endPoint);

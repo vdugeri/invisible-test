@@ -2,7 +2,7 @@ const axios = require('axios');
 const baseURL = 'http://api.timezonedb.com/v2.1/get-time-zone';
 const API_KEY = process.env.TIMEZONEDB_API_KEY;
 
-async function getTime({ lat = null, lng = null }) {
+const getTime = async ({ lat = null, lng = null }) => {
   const endPoint = `${baseURL}?by=position&key=${API_KEY}&lat=${lat}&lng=${lng}&format=json`;
 
   try {
